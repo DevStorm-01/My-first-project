@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Add student</title>
+  </head>
+  <style>
+  body{
+    background-color: black;
+  }
+  p{
+    color: white;
+  }
+    h1{
+      text-align: center;
+      color: white;
+    }
+    input{
+      width:90%;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 5px red;
+    }
+    button{
+      margin: 10px;
+      font-size:larger;
+      box-shadow: 5px 5px 5px green;
+    }
+  </style>
+  <body>
+    <h1>Add New student:</h1>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="text" id="subject" placeholder="subject">
+    <button onclick="save()" style="margin-right:150px">save it</button>
+    <button onclick="showinfo()">student info</button>
+    <p id="show"></p>
+    <p id="man"></p>
+    <p id="zan"></p>
+    <p id="small"></p>
+    <p id="len"></p>
+    <p id="ran"></p>
+    <script>
+      let student = {};
+      function save(){
+        let name = document.getElementById('name').value;
+        let subject = document.getElementById('subject').value;
+        student = {
+          myname: name,
+          mysubject: subject
+        }
+        document.getElementById('show').innerHTML = "student saved successfully!"
+      }
+      function showinfo(){
+        let toup = student.myname.toUpperCase();
+        let n  = document.getElementById('man').innerHTML = "Name: " + toup;
+        let s = document.getElementById("zan").innerHTML = "Favorite Subject : " + student.mysubject;
+        let short = toup.slice(0,3);
+        document.getElementById('small').innerHTML = "Name: (First 3 letters): " +  short;
+        let lenth = toup.length;
+        document.getElementById('len').innerHTML = "Length Name: " +  lenth; 
+        let rand = document.getElementById('ran').innerHTML = "Random: " + Math.floor(Math.random()*100);
+      }
+    </script>
+  </body>
+</html>
