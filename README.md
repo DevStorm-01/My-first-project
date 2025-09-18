@@ -1,2 +1,2 @@
 # My-first-project
-Add new student.
+Add new student
